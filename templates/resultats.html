@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de la recherche</title>
+    <style>
+        /* Styles CSS pour la page de résultats de recherche */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        strong {
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Résultats de la recherche</h1>
+    <ul>
+        <!-- Vous pouvez itérer sur les résultats des livres ici -->
+        {% for book in book_results %}
+        <li>
+            <strong>Titre:</strong> {{ book.title }}<br>
+            <strong>Auteur:</strong> {{ book.author_name }}<br>
+            <a href="{{ url_for('details', key=book.key) }}">Voir les détails</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

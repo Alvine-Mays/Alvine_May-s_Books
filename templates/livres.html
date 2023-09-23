@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du livre</title>
+</head>
+<body>
+    <h1>Détails du livre</h1>
+    
+    <!-- Formulaire de recherche par ISBN -->
+    <form method="post" action="/rechercher">
+        <input type="text" name="isbn" placeholder="Entrez un ISBN">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if book_details %}
+    <h2>Informations sur le livre</h2>
+    <p><strong>Titre:</strong> {{ book_details.title }}</p>
+    <p><strong>Auteur:</strong> {{ book_details.authors[0].name }}</p>
+    <p><strong>Nombre de pages:</strong> {{ book_details.number_of_pages }}</p>
+    <p><strong>Date de publication:</strong> {{ book_details.publish_date }}</p>
+    
+    <h2>Couverture du livre</h2>
+    <img src="{{ book_details.cover.medium }}" alt="Couverture du livre">
+    
+    <h2>Sujets associés</h2>
+    <ul>
+        {% for subject in book_details.subjects %}
+        <li><a href="{{ subject.url }}">{{ subject.name }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Éditeur</h2>
+    <p>{{ book_details.publishers[0].name }}</p>
+    
+    <h2>Liens supplémentaires</h2>
+    <ul>
+        {% for link in book_details.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Ajoutez d'autres détails du livre ici -->
+    {% endif %}
+</body>
+</html>

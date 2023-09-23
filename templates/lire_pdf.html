@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lire un PDF</title>
+    <style>
+        /* Styles CSS pour la page de lecture PDF */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        div {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contenu du PDF</h1>
+    
+    {% for page_text in texte_pages %}
+    <div>
+        <p>{{ page_text }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

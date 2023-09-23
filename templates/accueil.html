@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche de livres</title>
+    <style>
+        /* Styles CSS pour la page d'accueil */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007BFF; /* Couleur d'arrière-plan */
+            color: #fff; /* Couleur du texte */
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Centrer le contenu */
+        }
+        h1 {
+            margin-top: 20px; /* Espacement du haut */
+        }
+        p {
+            margin: 20px auto; /* Espacement autour du texte */
+            max-width: 600px; /* Largeur maximale du texte */
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%; /* Largeur de l'entrée de texte sur les téléphones */
+            border: 1px solid #ccc;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #007BFF;
+            border: none;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        /* Styles CSS pour les écrans de petite taille (téléphones) */
+        @media screen and (max-width: 1024px) {
+            h1 {
+                font-size: 64px; /* Taille de la police réduite pour les téléphones */
+                margin-top: ;
+            }
+            p {
+                font-size: 16px; /* Taille de la police réduite pour les téléphones */
+                text-align: justify;
+                max-width: 90%;
+                padding: 10px;
+            }
+            input[type="text"] {
+                width: 100%; /* Largeur de l'entrée de texte sur les téléphones */
+                height: 100px;
+                font-size: 64px;
+                margin: 10px;
+            }
+            button[type="submit"] {
+                width: 100%; /* Largeur du bouton sur les téléphones */
+                height: 100px;
+                margin: 20px;
+                font-size: 44px;
+            }
+        }
+
+        /* Styles pour le footer */
+            footer {
+                background-color: #007BFF;
+                color: #fff;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            .footer-content {
+                max-width: 960px;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: inline;
+                margin-right: 20px;
+            }
+
+            .footer-links li:last-child {
+                margin-right: 0;
+            }
+
+            .footer-links a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .footer-links a:hover {
+                text-decoration: underline;
+            }
+            @media (max-width: 1024px) {
+                .footer-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            
+                .footer-content p {
+                    margin-top: 100px;
+                    font-size: 50px;
+                }
+            
+                .footer-links li {
+                    display: block;
+                    margin: 5px 0;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>Recherche de livres</h1>
+    <p>Bienvenue sur notre site en ligne <strong>#ALVINE_May's_Books</strong>. Notre site a pour mission de faciliter votre accès à une vaste bibliothèque en ligne, regorgeant de milliers de livres couvrant une multitude de sujets. Que vous soyez un passionné de littérature, un étudiant en quête de ressources éducatives ou simplement à la recherche d'une bonne lecture, notre site est là pour répondre à vos besoins.</p>
+
+    <p>Que vous souhaitiez explorer de nouveaux horizons, approfondir vos compétences ou tout simplement vous évader dans le monde captivant et interessant de la littérature, #ALVINE_May's_Books est là pour vous accompagner dans votre parcours de découverte.</p>
+
+    <!-- Formulaire de recherche par nom -->
+    <form method="post" action="/rechercher">
+        <input type="text" name="name" placeholder="Entrez le nom d'un livre">
+        <button type="submit">Rechercher</button>
+    </form>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 #ALVINE_May's Books</p>
+        </div>
+    </footer>
+</body>
+</html>

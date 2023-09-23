@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du livre</title>
+    <style>
+        /* Styles CSS pour la page de détails du livre */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        strong {
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Détails du livre</h1>
+    
+    {% if book_details %}
+    <ul>
+        <li><strong>Titre:</strong> {{ book_details.title }}</li>
+        <li><strong>Auteur:</strong> {{ book_details.authors[0].name if book_details.authors else 'Inconnu' }}</li>
+        <!-- Ajoutez d'autres détails du livre ici -->
+        {% if book_details.read_url %}
+        <li><strong>Lire en ligne:</strong> <a href="{{ book_details.read_url }}" target="_blank">Lien vers le livre en ligne</a></li>
+        {% else %}
+        <li><strong>Lecture en ligne non disponible.</strong></li>
+        {% endif %}
+    </ul>
+    {% else %}
+    <p>Détails du livre non disponibles.</p>
+    {% endif %}
+    <a href="{{ url_for('accueil') }}">Retour à la recherche</a>
+
+    <!-- Ajoutez d'autres détails du livre ici -->
+    {% if book_details.read_url %}
+    <li><strong>Lire en ligne:</strong> <a href="{{ book_details.read_url }}" target="_blank">Lien vers le livre en ligne</a></li>
+    {% endif %}
+    {% if book_details.availability_message %}
+    <li><strong>Disponibilité:</strong> {{ book_details.availability_message }}</li>
+    {% endif %}
+</body>
+</html>
